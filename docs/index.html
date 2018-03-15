@@ -27,7 +27,7 @@
     }
 
     const share = document.getElementById('share');
-    const url = encodeURIComponent(`http://www.facebook.com/share.php?u=${location.href}`);
+    const url = `http://www.facebook.com/share.php?u=${encodeURIComponent(location.href)}`;
 
     share.addEventListener('click', e => {
       e.preventDefault();
