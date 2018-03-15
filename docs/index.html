@@ -17,13 +17,14 @@
   <script>
     const metas = document.head.children;
 
-    metas.forEach((meta) => {
-      const property = meta.getAttribute('property');
+    for (let i = 0; i < metas.length; i += 1) {
+      const property = metas[i].getAttribute('property');
 
       if (property === 'og:url') {
-        meta.setAttribute('content', location.href + location.search);
+        const ogUrl = metas[i];
+        ogUrl.setAttribute('content', location.href + location.search);
       }
-    });
+    }
 
     const share = document.getElementById('share');
     const url = `http://www.facebook.com/share.php?u=${location.href + location.search}`;
