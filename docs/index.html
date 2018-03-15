@@ -16,16 +16,14 @@
 
   <script>
     const metas = document.head.children;
-    const metaLength = metas.length;
 
-    for (let i = 0; i < metaLength; i += 1) {
-      const property = metas[i].getAttribute('property');
+    metas.forEach((meta) => {
+      const property = meta.getAttribute('property');
 
       if (property === 'og:url') {
-        const ogUrl = metas[i];
-        ogUrl.setAttribute('content', location.href + location.search);
+        meta.setAttribute('content', location.href + location.search);
       }
-    }
+    });
 
     const share = document.getElementById('share');
     const url = `http://www.facebook.com/share.php?u=${location.href + location.search}`;
