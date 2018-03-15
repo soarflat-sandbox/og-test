@@ -15,17 +15,6 @@
   <a id="share">シェアする</a>
 
   <script>
-    const metas = document.head.children;
-
-    for (let i = 0; i < metas.length; i += 1) {
-      const property = metas[i].getAttribute('property');
-
-      if (property === 'og:url') {
-        const ogUrl = metas[i];
-        ogUrl.setAttribute('content', location.href);
-      }
-    }
-
     const share = document.getElementById('share');
     const url = `http://www.facebook.com/share.php?u=${encodeURIComponent(location.href)}`;
 
