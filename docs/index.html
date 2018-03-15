@@ -22,12 +22,12 @@
 
       if (property === 'og:url') {
         const ogUrl = metas[i];
-        ogUrl.setAttribute('content', location.href + location.search);
+        ogUrl.setAttribute('content', location.href);
       }
     }
 
     const share = document.getElementById('share');
-    const url = `http://www.facebook.com/share.php?u=${location.href + location.search}`;
+    const url = `http://www.facebook.com/share.php?u=${location.href}`;
 
     share.addEventListener('click', e => {
       e.preventDefault();
